@@ -24,7 +24,8 @@
         }
 
         .a4-page {
-            width: 210mm;
+            width: 100%;
+            max-width: 210mm;
             min-height: 297mm;
             background-color: white;
             position: relative;
@@ -69,6 +70,29 @@
             height: 12px;
             border-radius: 50%;
             background-color: #0d6efd;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .avatar-circle {
+                width: 70px;
+                height: 70px;
+                font-size: 1.5rem;
+            }
+
+            .sidebar h5 {
+                font-size: 0.9rem;
+                /* Smaller headings in sidebar */
+            }
+
+            .sidebar .small {
+                font-size: 0.75rem;
+                /* Smaller text */
+            }
         }
 
         /* Print Specifics */
@@ -120,7 +144,7 @@
         <div class="row g-0 w-100">
 
             <!-- LEFT COLUMN (Sidebar) -->
-            <div class="col-4 sidebar p-4 d-flex flex-column">
+            <div class="col-4 sidebar p-2 p-md-4 d-flex flex-column">
                 <!-- Changed padding from p-4 p-md-5 to just p-4 to give more width -->
 
                 <div class="text-center mb-5">
@@ -187,12 +211,12 @@
                     <h5 class="text-uppercase text-info mb-3 fw-bold small">Languages</h5>
                     <ul class="list-unstyled small text-white-50">
                         <li class="mb-1"><strong class="text-white">English:</strong> Conversational</li>
-                        <li class="mb-1"><strong class="text-white">Hindi:</strong> Native</li>
-                        <li><strong class="text-white">Punjabi:</strong> Native</li>
+                        <li class="mb-1"><strong class="text-white">Hindi:</strong> Fluent</li>
+                        <li><strong class="text-white">Punjabi:</strong> Fluent</li>
                     </ul>
                 </div>
 
-                <!-- Education (Sidebar) -->
+                <!-- Education (Sidebar)-->
                 <div>
                     <h5 class="text-uppercase text-info mb-3 fw-bold small">Education</h5>
                     <div>
@@ -205,7 +229,7 @@
             </div>
 
             <!-- RIGHT COLUMN (Main Content) -->
-            <div class="col-8 bg-white p-4 p-md-5">
+            <div class="col-8 bg-white p-2 p-md-5">
 
                 <!-- HEADER -->
                 <header class="border-bottom pb-4 mb-5">
