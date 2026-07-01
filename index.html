@@ -3,637 +3,803 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amandeep Singh — Software Engineer</title>
+    <title>Amandeep Singh - Software Engineer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <style>
         :root {
-            --ink: #0f0f0f;
-            --ink-soft: #444;
-            --ink-muted: #888;
-            --accent: #c8522a;
-            --accent-light: #f5ede8;
-            --sidebar-bg: #111317;
-            --sidebar-border: #2a2d35;
-            --highlight: #e8f0fe;
-            --white: #fff;
-            --card-bg: #fafafa;
-            --border: #e4e4e7;
+            --ink: #121826;
+            --ink-soft: #3f4758;
+            --ink-muted: #768092;
+            --accent: #1f5fbf;
+            --accent-2: #b8c2d2;
+            --accent-soft: #edf4ff;
+            --panel: #17345f;
+            --panel-soft: #244a7f;
+            --panel-line: rgba(255, 255, 255, .12);
+            --paper: #ffffff;
+            --line: #d9e1ec;
+            --chip: #f5f8fc;
         }
 
         * { box-sizing: border-box; }
 
+        p,
+        li,
+        span,
+        a,
+        strong,
+        h1,
+        h2 {
+            overflow-wrap: anywhere;
+        }
+
+        html {
+            background: #d8dee8;
+        }
+
         body {
-            font-family: 'DM Sans', sans-serif;
-            background: #d4d4d4;
-            background-image:
-                radial-gradient(circle at 20% 20%, #b8b8b8 0%, transparent 60%),
-                radial-gradient(circle at 80% 80%, #c0c0c0 0%, transparent 60%);
             min-height: 100vh;
             margin: 0;
-            padding: 2rem 1rem;
+            padding: 18px;
+            font-family: "DM Sans", Arial, sans-serif;
+            color: var(--ink);
+            background:
+                linear-gradient(135deg, rgba(31,95,191,.16), transparent 34%),
+                linear-gradient(315deg, rgba(184,194,210,.28), transparent 38%),
+                #dce2ec;
         }
 
-        /* ── WRAPPER ── */
         .resume-wrapper {
-            max-width: 960px;
+            width: 210mm;
+            min-height: 297mm;
             margin: 0 auto;
-            background: var(--white);
-            box-shadow: 0 20px 60px rgba(0,0,0,.25), 0 4px 12px rgba(0,0,0,.15);
-            border-radius: 4px;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            background: var(--paper);
+            box-shadow: 0 24px 70px rgba(18, 24, 38, .24);
         }
 
-        /* ── TOP HEADER BAND ── */
         .resume-header {
-            background: var(--sidebar-bg);
-            color: var(--white);
-            padding: 2.5rem 2.5rem 2rem;
-            display: flex;
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 18px;
             align-items: center;
-            gap: 1.75rem;
-            border-bottom: 3px solid var(--accent);
+            padding: 24px 30px 22px;
+            color: #fff;
+            background: linear-gradient(135deg, #17345f 0%, #244f8c 52%, #102747 100%);
+            border-bottom: 4px solid var(--accent);
+            overflow: hidden;
+        }
+
+        .resume-header::after {
+            content: "";
+            position: absolute;
+            right: 18px;
+            top: 18px;
+            width: 122px;
+            height: 122px;
+            border-radius: 50%;
+            border: 18px solid rgba(184,194,210,.18);
         }
 
         .avatar-ring {
-            flex-shrink: 0;
-            width: 84px;
-            height: 84px;
+            position: relative;
+            z-index: 1;
+            width: 78px;
+            height: 78px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), #e8824a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.8rem;
+            display: grid;
+            place-items: center;
             color: #fff;
-            border: 3px solid rgba(255,255,255,.15);
-            box-shadow: 0 0 0 6px rgba(200,82,42,.2);
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 30px;
+            background: linear-gradient(135deg, #1f5fbf, #8ea4c6);
+            border: 3px solid rgba(255,255,255,.24);
+            box-shadow: 0 0 0 7px rgba(184,194,210,.2);
         }
 
-        .header-text .name {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(1.6rem, 4vw, 2.4rem);
-            font-weight: 400;
-            letter-spacing: -.5px;
-            line-height: 1.1;
-            margin: 0 0 .35rem;
+        .header-text {
+            position: relative;
+            z-index: 1;
+            min-width: 0;
         }
 
-        .header-text .title {
-            font-size: .85rem;
-            font-weight: 600;
-            letter-spacing: 3px;
+        .eyebrow {
+            margin: 0 0 4px;
+            color: var(--accent-2);
+            font-size: 9.5px;
+            font-weight: 800;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--accent);
-            margin: 0 0 .6rem;
         }
 
-        .header-text .tagline {
-            font-size: .85rem;
-            color: rgba(255,255,255,.6);
-            line-height: 1.6;
-            max-width: 520px;
+        .name {
             margin: 0;
+            font-family: "DM Serif Display", Georgia, serif;
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.02;
         }
 
-        .header-contacts {
+        .headline {
+            margin: 7px 0 0;
+            max-width: 610px;
+            color: rgba(255,255,255,.78);
+            font-size: 11.4px;
+            line-height: 1.48;
+        }
+
+        .contact-bar {
             display: flex;
             flex-wrap: wrap;
-            gap: .5rem 1.5rem;
-            margin-top: .9rem;
+            gap: 7px 14px;
+            margin-top: 12px;
         }
 
-        .header-contacts a,
-        .header-contacts span {
-            font-size: .78rem;
-            color: rgba(255,255,255,.7);
-            text-decoration: none;
-            display: flex;
+        .contact-bar a,
+        .contact-bar span {
+            display: inline-flex;
             align-items: center;
-            gap: .4rem;
-            transition: color .2s;
+            gap: 6px;
+            color: rgba(255,255,255,.8);
+            font-size: 9.4px;
+            line-height: 1.25;
+            text-decoration: none;
+            max-width: 100%;
         }
 
-        .header-contacts a:hover { color: var(--accent); }
-        .header-contacts i { color: var(--accent); font-size: .8rem; }
+        .contact-bar i {
+            color: var(--accent-2);
+            font-size: 10px;
+        }
 
-        /* ── BODY GRID ── */
         .resume-body {
             display: grid;
-            grid-template-columns: 240px 1fr;
+            grid-template-columns: 228px 1fr;
+            min-height: 0;
         }
 
-        /* ── SIDEBAR ── */
         .resume-sidebar {
-            background: #1a1d24;
-            color: rgba(255,255,255,.8);
-            padding: 2rem 1.5rem;
-            border-right: 1px solid var(--sidebar-border);
+            padding: 22px 18px;
+            color: rgba(255,255,255,.78);
+            background: var(--panel);
+            border-right: 1px solid rgba(0,0,0,.12);
+            min-width: 0;
         }
 
-        .sidebar-section { margin-bottom: 2rem; }
+        .resume-main {
+            padding: 22px 26px 20px;
+            min-width: 0;
+        }
+
+        .sidebar-section,
+        .section-block {
+            margin-bottom: 18px;
+        }
+
+        .sidebar-label,
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin: 0 0 10px;
+            font-size: 9.7px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+        }
 
         .sidebar-label {
-            font-size: .65rem;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            color: var(--accent-2);
+            padding-bottom: 7px;
+            border-bottom: 1px solid var(--panel-line);
+        }
+
+        .section-title {
+            color: var(--ink);
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--line);
+        }
+
+        .section-num {
             color: var(--accent);
-            margin-bottom: .85rem;
-            padding-bottom: .4rem;
-            border-bottom: 1px solid var(--sidebar-border);
+            font-size: 9px;
+        }
+
+        .summary-card {
+            padding: 12px 14px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #f3f7ff, #ffffff);
+            border: 1px solid #d5e2f2;
+            border-left: 4px solid var(--accent);
+        }
+
+        .summary-card p {
+            margin: 0;
+            color: var(--ink-soft);
+            font-size: 10.9px;
+            line-height: 1.48;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .metric {
+            padding: 7px 7px;
+            background: #fff;
+            border: 1px solid #d9e3f0;
+        }
+
+        .metric strong {
+            display: block;
+            color: var(--accent);
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .metric span {
+            display: block;
+            margin-top: 3px;
+            color: var(--ink-muted);
+            font-size: 8.2px;
+            line-height: 1.25;
         }
 
         .skill-group-title {
-            font-size: .7rem;
-            font-weight: 600;
-            color: rgba(255,255,255,.4);
+            margin: 10px 0 5px;
+            color: rgba(255,255,255,.45);
+            font-size: 8.6px;
+            font-weight: 800;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin: .8rem 0 .4rem;
         }
 
         .skill-chip {
             display: inline-block;
+            margin: 0 4px 5px 0;
+            padding: 3px 6px;
+            color: rgba(255,255,255,.82);
             background: rgba(255,255,255,.07);
-            color: rgba(255,255,255,.8);
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 3px;
-            padding: .18rem .55rem;
-            font-size: .7rem;
-            margin: .2rem .2rem 0 0;
-            line-height: 1.6;
-            transition: background .2s, border-color .2s;
-        }
-
-        .skill-chip:hover {
-            background: rgba(200,82,42,.2);
-            border-color: var(--accent);
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 4px;
+            font-size: 9.3px;
+            line-height: 1.22;
+            max-width: 100%;
         }
 
         .skill-chip.featured {
-            background: rgba(200,82,42,.15);
-            border-color: rgba(200,82,42,.4);
-            color: #f5a98a;
+            color: #ffffff;
+            background: rgba(31,95,191,.32);
+            border-color: rgba(184,194,210,.48);
         }
 
-        .lang-item {
-            font-size: .78rem;
-            margin-bottom: .5rem;
+        .side-line {
             display: flex;
             justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 7px;
+            font-size: 9.5px;
+            line-height: 1.3;
         }
 
-        .lang-item strong { color: rgba(255,255,255,.9); }
-        .lang-item span { color: rgba(255,255,255,.4); }
+        .side-line strong {
+            color: rgba(255,255,255,.92);
+            font-weight: 700;
+        }
+
+        .side-line span {
+            color: rgba(255,255,255,.48);
+            text-align: right;
+        }
 
         .edu-degree {
-            font-size: .85rem;
-            font-weight: 600;
-            color: rgba(255,255,255,.9);
+            margin: 0;
+            color: rgba(255,255,255,.92);
+            font-size: 10.5px;
+            font-weight: 800;
+            line-height: 1.35;
         }
 
         .edu-college {
-            font-size: .75rem;
-            color: rgba(255,255,255,.45);
-            margin-top: .15rem;
+            margin: 3px 0 6px;
+            color: rgba(255,255,255,.52);
+            font-size: 9.5px;
+            line-height: 1.35;
         }
 
         .edu-year {
             display: inline-block;
-            font-size: .7rem;
-            color: var(--accent);
-            background: rgba(200,82,42,.12);
-            border-radius: 3px;
-            padding: .1rem .5rem;
-            margin-top: .4rem;
-        }
-
-        /* ── MAIN CONTENT ── */
-        .resume-main {
-            padding: 2rem 2.2rem;
-            background: var(--white);
-        }
-
-        .section-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1rem;
-            font-weight: 400;
-            font-style: italic;
-            color: var(--ink);
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: .7rem;
-        }
-
-        .section-title::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        .section-title .section-num {
-            font-family: 'DM Sans', sans-serif;
-            font-style: normal;
-            font-size: .65rem;
+            padding: 3px 7px;
+            color: #ffffff;
+            background: rgba(31,95,191,.24);
+            border-radius: 4px;
+            font-size: 8.6px;
             font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--accent);
         }
 
-        /* Timeline */
-        .timeline { position: relative; }
+        .quick-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .quick-list li {
+            position: relative;
+            margin-bottom: 7px;
+            padding-left: 14px;
+            color: rgba(255,255,255,.72);
+            font-size: 9.5px;
+            line-height: 1.33;
+        }
+
+        .quick-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-2);
+        }
 
         .timeline-item {
             position: relative;
-            padding-left: 1.4rem;
-            margin-bottom: 1.6rem;
+            padding-left: 18px;
+            margin-bottom: 14px;
         }
 
         .timeline-item::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
-            top: 6px;
-            width: 8px;
-            height: 8px;
+            top: 5px;
+            width: 9px;
+            height: 9px;
             border-radius: 50%;
             background: var(--accent);
-            box-shadow: 0 0 0 3px rgba(200,82,42,.15);
+            box-shadow: 0 0 0 4px rgba(31,95,191,.16);
         }
 
         .timeline-item::after {
-            content: '';
+            content: "";
             position: absolute;
-            left: 3px;
-            top: 18px;
-            bottom: -12px;
+            left: 4px;
+            top: 19px;
+            bottom: -11px;
             width: 1px;
-            background: var(--border);
+            background: var(--line);
         }
 
         .timeline-item:last-child::after { display: none; }
 
+        .role-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 7px;
+            min-width: 0;
+        }
+
+        .role-row > div {
+            min-width: 0;
+        }
+
         .job-title {
-            font-weight: 700;
-            font-size: .92rem;
-            color: var(--ink);
             margin: 0;
+            font-size: 13.4px;
+            font-weight: 800;
         }
 
         .job-company {
-            font-size: .78rem;
+            margin: 2px 0 0;
             color: var(--ink-muted);
-            margin: .15rem 0;
+            font-size: 10px;
         }
 
         .job-badge {
-            display: inline-block;
-            font-size: .68rem;
-            font-weight: 600;
+            flex: 0 0 auto;
+            padding: 4px 9px;
             color: var(--accent);
-            background: var(--accent-light);
-            border-radius: 30px;
-            padding: .15rem .65rem;
+            background: var(--accent-soft);
+            border: 1px solid #cfdcf0;
+            border-radius: 999px;
+            font-size: 8.6px;
+            font-weight: 800;
+            white-space: nowrap;
         }
 
         .job-bullets {
-            margin: .6rem 0 0;
-            padding-left: 1rem;
+            margin: 0;
+            padding: 0;
             list-style: none;
         }
 
         .job-bullets li {
-            font-size: .78rem;
-            color: var(--ink-soft);
-            line-height: 1.65;
-            margin-bottom: .35rem;
             position: relative;
-            padding-left: .8rem;
+            margin-bottom: 5px;
+            padding-left: 16px;
+            color: var(--ink-soft);
+            font-size: 10.1px;
+            line-height: 1.38;
         }
 
         .job-bullets li::before {
-            content: '→';
+            content: "\f00c";
             position: absolute;
-            left: -.2rem;
+            left: 0;
+            top: 1px;
             color: var(--accent);
-            font-size: .7rem;
+            font-family: "Font Awesome 6 Free";
+            font-size: 8px;
+            font-weight: 900;
         }
 
-        /* Competency chips */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 7px;
+        }
+
         .comp-chip {
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: .35rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: .35rem .75rem;
-            font-size: .75rem;
-            font-weight: 500;
-            color: var(--ink);
-            margin: .2rem .25rem .2rem 0;
-            transition: border-color .2s, background .2s;
+            gap: 7px;
+            min-height: 31px;
+            padding: 7px 9px;
+            color: var(--ink-soft);
+            background: var(--chip);
+            border: 1px solid #dbe5f1;
+            border-radius: 5px;
+            font-size: 9.5px;
+            font-weight: 700;
+            line-height: 1.25;
+            min-width: 0;
         }
 
-        .comp-chip:hover {
-            border-color: var(--accent);
-            background: var(--accent-light);
+        .comp-chip i {
+            width: 13px;
+            color: var(--accent);
+            text-align: center;
         }
 
-        .comp-chip i { color: var(--accent); font-size: .7rem; }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 9px;
+        }
 
-        /* Project cards */
         .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1rem 1.1rem;
-            margin-bottom: .8rem;
-            border-left: 3px solid var(--accent);
-            transition: box-shadow .2s;
-        }
-
-        .project-card:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,.07);
+            min-height: 100px;
+            padding: 10px 11px;
+            background: #fff;
+            border: 1px solid #dbe4ef;
+            border-left: 4px solid var(--accent);
+            overflow: hidden;
         }
 
         .project-name {
-            font-weight: 700;
-            font-size: .88rem;
-            color: var(--ink);
-            margin: 0 0 .25rem;
+            margin: 0 0 3px;
+            font-size: 10.8px;
+            font-weight: 800;
+            line-height: 1.22;
         }
 
         .project-stack {
-            font-size: .7rem;
-            font-weight: 600;
+            margin: 0 0 5px;
             color: var(--accent);
-            letter-spacing: .5px;
-            margin-bottom: .4rem;
+            font-size: 8.2px;
+            font-weight: 800;
+            letter-spacing: .2px;
+            line-height: 1.25;
+            text-transform: uppercase;
         }
 
         .project-desc {
-            font-size: .76rem;
+            margin: 0;
             color: var(--ink-soft);
-            line-height: 1.6;
+            font-size: 9.3px;
+            line-height: 1.34;
+        }
+
+        .no-print {
+            text-align: center;
+            margin: 18px 0 0;
+        }
+
+        .print-btn {
+            border: 0;
+            border-radius: 999px;
+            padding: 10px 20px;
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent), #17345f);
+            box-shadow: 0 8px 24px rgba(31,95,191,.24);
+            font-weight: 800;
+            letter-spacing: .2px;
+        }
+
+        @page {
+            size: A4 portrait;
             margin: 0;
         }
 
-        /* Divider between main sections */
-        .section-block { margin-bottom: 1.8rem; }
-
-        /* ── PRINT ── */
         @media print {
-            body { background: white; padding: 0; }
-            .resume-wrapper { box-shadow: none; border-radius: 0; max-width: 100%; }
-            .no-print { display: none !important; }
-            .resume-sidebar, .resume-header {
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #fff !important;
+            }
+
+            .resume-wrapper {
+                width: 210mm;
+                height: 297mm;
+                min-height: 297mm;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .resume-header,
+            .resume-sidebar,
+            .summary-card,
+            .metric,
+            .comp-chip,
+            .project-card {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
+
+            .no-print { display: none !important; }
+
+            .section-block,
+            .timeline-item,
+            .project-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
         }
 
-        /* ── RESPONSIVE: tablet ── */
-        @media (max-width: 768px) {
-            body { padding: 1rem .5rem; }
-
-            .resume-header {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 1.5rem;
-                gap: 1rem;
+        @media screen and (max-width: 860px) {
+            body {
+                padding: 10px;
             }
 
-            .avatar-ring { width: 64px; height: 64px; font-size: 1.3rem; }
+            .resume-wrapper {
+                width: 100%;
+                min-height: auto;
+            }
 
             .resume-body {
                 grid-template-columns: 1fr;
             }
 
             .resume-sidebar {
-                border-right: none;
-                border-bottom: 1px solid var(--sidebar-border);
-                padding: 1.5rem;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0 18px;
+            }
+        }
+
+        @media screen and (max-width: 560px) {
+            .resume-header {
+                grid-template-columns: 1fr;
+                padding: 22px;
+            }
+
+            .resume-sidebar,
+            .projects-grid,
+            .comp-grid,
+            .metric-grid {
+                grid-template-columns: 1fr;
             }
 
             .resume-main {
-                padding: 1.5rem;
+                padding: 20px;
             }
 
-            .header-text .name { font-size: 1.6rem; }
-        }
+            .role-row {
+                display: block;
+            }
 
-        /* ── RESPONSIVE: mobile ── */
-        @media (max-width: 480px) {
-            .resume-header { padding: 1.2rem; }
-            .header-contacts { gap: .4rem 1rem; }
-            .resume-main { padding: 1.2rem; }
+            .job-badge {
+                display: inline-block;
+                margin-top: 6px;
+            }
         }
     </style>
 </head>
 <body>
-
-<!-- ════════════════ RESUME ════════════════ -->
-<div class="resume-wrapper">
-
-    <!-- TOP HEADER -->
-    <div class="resume-header">
+<article class="resume-wrapper">
+    <header class="resume-header">
         <div class="avatar-ring">AS</div>
-        <div class="header-text w-100">
-            <p class="title">Software Engineer</p>
+        <div class="header-text">
+            <p class="eyebrow">Full-Stack Software Engineer</p>
             <h1 class="name">Amandeep Singh</h1>
-            <p class="tagline">
-                Full-stack developer with 4.5+ years of hands-on experience at Logiciel Solutions, specialising in
-                Laravel, React, Next.js, Shopify &amp; WordPress. Passionate about clean code, performance, and
-                turning complex ideas into elegant digital products.
+            <p class="headline">
+                4.5+ years building fast, secure, production-ready web products across Laravel,
+                Next.js, PHP, JavaScript, and SQL. Strong in API development, admin dashboards,
+                performance optimization, and turning business requirements into reliable user experiences.
             </p>
-            <div class="header-contacts">
-                <a href="mailto:iamamandeepsingh2000@gmail.com">
-                    <i class="fas fa-envelope"></i>iamamandeepsingh2000@gmail.com
-                </a>
-                <a href="tel:9465723067">
-                    <i class="fas fa-phone"></i>+91 9465723067
-                </a>
-                <span><i class="fas fa-map-marker-alt"></i>Ludhiana, Punjab, India</span>
+            <div class="contact-bar">
+                <a href="mailto:iamamandeepsingh2000@gmail.com"><i class="fas fa-envelope"></i>iamamandeepsingh2000@gmail.com</a>
+                <a href="tel:+919465723067"><i class="fas fa-phone"></i>+91 94657 23067</a>
+                <span><i class="fas fa-location-dot"></i>Ludhiana, Punjab, India</span>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- BODY -->
     <div class="resume-body">
-
-        <!-- ── SIDEBAR ── -->
         <aside class="resume-sidebar">
+            <section class="sidebar-section">
+                <h2 class="sidebar-label">Technical Skills</h2>
 
-            <!-- Technical Skills -->
-            <div class="sidebar-section">
-                <div class="sidebar-label">Technical Skills</div>
-
-                <div class="skill-group-title">Languages &amp; DB</div>
+                <div class="skill-group-title">Core Stack</div>
+                <span class="skill-chip featured">Laravel</span>
+                <span class="skill-chip featured">Next.js</span>
                 <span class="skill-chip">PHP</span>
                 <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">TypeScript</span>
+
+                <div class="skill-group-title">Data & APIs</div>
                 <span class="skill-chip">MySQL</span>
                 <span class="skill-chip">PostgreSQL</span>
+                <span class="skill-chip">REST APIs</span>
+                <span class="skill-chip">Webhooks</span>
+                <span class="skill-chip">JWT Auth</span>
 
-                <div class="skill-group-title">Frameworks</div>
-                <span class="skill-chip featured">Next.js</span>
-                <span class="skill-chip">Laravel</span>
-                <span class="skill-chip">React</span>
-                <span class="skill-chip">jQuery</span>
-                <span class="skill-chip">Bootstrap</span>
+                <div class="skill-group-title">Frontend & UI</div>
+                <span class="skill-chip">HTML5</span>
+                <span class="skill-chip">CSS3</span>
+                <span class="skill-chip">Responsive UI</span>
+                <span class="skill-chip">SSR</span>
 
-                <div class="skill-group-title">Platforms &amp; CMS</div>
-                <span class="skill-chip featured">Shopify</span>
-                <span class="skill-chip featured">WordPress</span>
-
-                <div class="skill-group-title">AI &amp; Dev Tools</div>
+                <div class="skill-group-title">Tools</div>
                 <span class="skill-chip">GitHub</span>
+                <span class="skill-chip">Bootstrap</span>
+                <span class="skill-chip">Tailwind CSS</span>
                 <span class="skill-chip">Cursor</span>
                 <span class="skill-chip">Lovable</span>
-                <span class="skill-chip">Antigravity</span>
-            </div>
+            </section>
 
-            <!-- Languages -->
-            <div class="sidebar-section">
-                <div class="sidebar-label">Languages</div>
-                <div class="lang-item">
-                    <strong>English</strong><span>Conversational</span>
-                </div>
-                <div class="lang-item">
-                    <strong>Hindi</strong><span>Fluent</span>
-                </div>
-                <div class="lang-item">
-                    <strong>Punjabi</strong><span>Fluent</span>
-                </div>
-            </div>
+            <section class="sidebar-section">
+                <h2 class="sidebar-label">Hiring Highlights</h2>
+                <ul class="quick-list">
+                    <li>Ready for full-stack, Laravel, Next.js, PHP, and JavaScript roles.</li>
+                    <li>Comfortable owning features from requirement discussion to launch.</li>
+                    <li>Focused on clean code, readable architecture, and practical delivery.</li>
+                    <li>Experienced with performance tuning, debugging, and responsive UI.</li>
+                </ul>
+            </section>
 
-            <!-- Education -->
-            <div class="sidebar-section">
-                <div class="sidebar-label">Education</div>
-                <div class="edu-degree">Bachelor of Computer Applications</div>
-                <div class="edu-college">GGN Khalsa College, Ludhiana</div>
+            <section class="sidebar-section">
+                <h2 class="sidebar-label">Languages</h2>
+                <div class="side-line"><strong>English</strong><span>Conversational</span></div>
+                <div class="side-line"><strong>Hindi</strong><span>Fluent</span></div>
+                <div class="side-line"><strong>Punjabi</strong><span>Fluent</span></div>
+            </section>
+
+            <section class="sidebar-section">
+                <h2 class="sidebar-label">Education</h2>
+                <p class="edu-degree">Bachelor of Computer Applications</p>
+                <p class="edu-college">GGN Khalsa College, Ludhiana</p>
                 <span class="edu-year">Graduated Apr 2022</span>
-            </div>
-
+            </section>
         </aside>
 
-        <!-- ── MAIN ── -->
         <main class="resume-main">
+            <section class="summary-card">
+                <p>
+                    Impact-focused developer trusted to build custom dashboards, business web apps,
+                    integrations, and API-backed applications. Known for practical problem
+                    solving, fast learning, collaboration with designers and stakeholders, and delivering
+                    polished products that are easy to maintain.
+                </p>
+                <div class="metric-grid">
+                    <div class="metric"><strong>4.5+</strong><span>years professional experience</span></div>
+                    <div class="metric"><strong>40%</strong><span>Core Web Vitals improvement</span></div>
+                    <div class="metric"><strong>35%</strong><span>page-load reduction on dashboard</span></div>
+                </div>
+            </section>
 
-            <!-- Work Experience -->
-            <div class="section-block">
-                <h2 class="section-title">
-                    <span class="section-num">01</span> Work Experience
-                </h2>
+            <section class="section-block">
+                <h2 class="section-title"><span class="section-num">01</span> Work Experience</h2>
                 <div class="timeline">
-
                     <div class="timeline-item">
-                        <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-1">
+                        <div class="role-row">
                             <div>
                                 <p class="job-title">Software Engineer</p>
-                                <p class="job-company">
-                                    <i class="fas fa-building me-1"></i>Logical Solutions &bull; Ludhiana, Punjab
-                                </p>
+                                <p class="job-company"><i class="fas fa-building me-1"></i>Logical Solutions, Ludhiana, Punjab</p>
                             </div>
-                            <span class="job-badge">Jun 2021 – Nov 2025</span>
+                            <span class="job-badge">Jun 2021 - Nov 2025</span>
                         </div>
                         <ul class="job-bullets">
-                            <li>4.5+ years delivering scalable, production-grade web solutions across diverse industries.</li>
-                            <li>Built and maintained custom <strong>Shopify</strong> storefronts and themes, including Liquid templating, app integrations and checkout customisations.</li>
-                            <li>Developed bespoke <strong>WordPress</strong> themes and plugins; handled WooCommerce store setup and performance tuning.</li>
-                            <li>Architected server-side rendered &amp; static web apps using <strong>Next.js</strong>, improving Core Web Vitals scores by up to 40%.</li>
-                            <li>Implemented clean, secure coding practices and robust RESTful APIs using <strong>Laravel</strong> and <strong>React</strong>.</li>
-                            <li>Led code reviews, mentored junior developers, and drove Agile sprint ceremonies.</li>
-                            <li>Collaborated with designers and stakeholders to translate business requirements into functional systems.</li>
+                            <li>Delivered scalable production web applications for clients across business operations, dashboards, workflow automation, and content-driven platforms.</li>
+                            <li>Built Next.js interfaces with server-side rendering, reusable components, optimized routing, and responsive UI for smooth user experiences.</li>
+                            <li>Developed Laravel-based modules for admin panels, reporting flows, file handling, notifications, and secure business logic.</li>
+                            <li>Created server-rendered and static applications in Next.js, improving Core Web Vitals by up to 40% through optimized rendering and assets.</li>
+                            <li>Implemented secure Laravel APIs, authentication, role-based access, reporting dashboards, and optimized database queries.</li>
+                            <li>Mentored junior developers, reviewed code, supported Agile sprint planning, and translated stakeholder needs into clear technical tasks.</li>
                         </ul>
                     </div>
-
                 </div>
-            </div>
+            </section>
 
-            <!-- Key Competencies -->
-            <div class="section-block">
-                <h2 class="section-title">
-                    <span class="section-num">02</span> Key Competencies
-                </h2>
-                <div>
-                    <span class="comp-chip"><i class="fas fa-users"></i> Team Leadership</span>
-                    <span class="comp-chip"><i class="fas fa-sync-alt"></i> Agile Methodology</span>
-                    <span class="comp-chip"><i class="fas fa-chess"></i> Strategic Planning</span>
-                    <span class="comp-chip"><i class="fas fa-store"></i> E-Commerce Development</span>
-                    <span class="comp-chip"><i class="fas fa-tachometer-alt"></i> Performance Optimisation</span>
-                    <span class="comp-chip"><i class="fas fa-bug"></i> Debugging &amp; Problem Solving</span>
-                    <span class="comp-chip"><i class="fas fa-code-branch"></i> Version Control (Git)</span>
-                    <span class="comp-chip"><i class="fas fa-mobile-alt"></i> Responsive Web Design</span>
+            <section class="section-block">
+                <h2 class="section-title"><span class="section-num">02</span> Core Strengths</h2>
+                <div class="comp-grid">
+                    <span class="comp-chip"><i class="fas fa-laptop-code"></i>Full-Stack Development</span>
+                    <span class="comp-chip"><i class="fas fa-gauge-high"></i>Performance Optimization</span>
+                    <span class="comp-chip"><i class="fas fa-code-branch"></i>Version Control & Reviews</span>
+                    <span class="comp-chip"><i class="fas fa-shield-halved"></i>Secure API Development</span>
+                    <span class="comp-chip"><i class="fas fa-mobile-screen"></i>Responsive Web Design</span>
+                    <span class="comp-chip"><i class="fas fa-people-group"></i>Team Collaboration</span>
                 </div>
-            </div>
+            </section>
 
-            <!-- Key Projects -->
-            <div class="section-block">
-                <h2 class="section-title">
-                    <span class="section-num">03</span> Key Projects
-                </h2>
+            <section class="section-block">
+                <h2 class="section-title"><span class="section-num">03</span> Selected Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <p class="project-name">Enterprise Management System</p>
+                        <p class="project-stack">Laravel - MySQL - Bootstrap - Next.js</p>
+                        <p class="project-desc">
+                            Led backend development for a multi-module business system with role-based access,
+                            reporting dashboards, and optimized queries that reduced average page load by 35%.
+                        </p>
+                    </article>
 
-                <div class="project-card">
-                    <p class="project-name">Enterprise Management System</p>
-                    <p class="project-stack">PHP &bull; Laravel &bull; MySQL &bull; Bootstrap &bull; React</p>
-                    <p class="project-desc">
-                        Led backend development of a comprehensive multi-module management system featuring
-                        role-based access control, advanced reporting dashboards, and optimised query performance
-                        that reduced average page load time by 35%.
-                    </p>
+                    <article class="project-card">
+                        <p class="project-name">Workflow Automation Platform</p>
+                        <p class="project-stack">Laravel - Next.js - REST API - Webhooks</p>
+                        <p class="project-desc">
+                            Built role-based workflow screens, automated status updates, webhook integrations,
+                            and clean API contracts to reduce manual follow-up across internal teams.
+                        </p>
+                    </article>
+
+                    <article class="project-card">
+                        <p class="project-name">Custom Admin & Reporting Portal</p>
+                        <p class="project-stack">PHP - Laravel - MySQL - JavaScript</p>
+                        <p class="project-desc">
+                            Developed reusable admin modules, advanced filters, export-ready reports,
+                            validation flows, and optimized database queries for faster daily operations.
+                        </p>
+                    </article>
+
+                    <article class="project-card">
+                        <p class="project-name">Next.js SaaS Dashboard</p>
+                        <p class="project-stack">Next.js - TypeScript - REST API - JWT Auth</p>
+                        <p class="project-desc">
+                            Created an analytics dashboard with SSR, dynamic routing, JWT authentication,
+                            real-time visualizations, and a 96+ Lighthouse performance score.
+                        </p>
+                    </article>
                 </div>
-
-                <div class="project-card">
-                    <p class="project-name">Multi-Vendor Shopify Store</p>
-                    <p class="project-stack">Shopify &bull; Liquid &bull; JavaScript &bull; REST API &bull; Webhooks</p>
-                    <p class="project-desc">
-                        Designed and built a fully customised Shopify storefront with bespoke Liquid templates,
-                        third-party app integrations (payments, inventory), and automated order-management
-                        workflows via webhooks.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <p class="project-name">Corporate Website &amp; Blog Platform</p>
-                    <p class="project-stack">WordPress &bull; WooCommerce &bull; PHP &bull; Custom Plugins</p>
-                    <p class="project-desc">
-                        Developed a high-performance WordPress site with a custom theme, ACF-powered page
-                        builder, WooCommerce store and SEO-optimised content architecture serving 10k+ monthly
-                        visitors.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <p class="project-name">Next.js SaaS Dashboard</p>
-                    <p class="project-stack">Next.js &bull; React &bull; TypeScript &bull; REST API &bull; Tailwind CSS</p>
-                    <p class="project-desc">
-                        Built a server-side-rendered analytics dashboard with real-time data visualisation,
-                        JWT authentication, and dynamic routing. Achieved a Lighthouse performance score of 96+.
-                    </p>
-                </div>
-
-            </div>
-
+            </section>
         </main>
     </div>
-</div>
+</article>
 
-<!-- Print Button -->
-<div class="text-center mt-4 no-print">
-    <button onclick="window.print()"
-        class="btn text-white fw-semibold px-4 py-2 rounded-pill shadow"
-        style="background: var(--accent, #c8522a); border: none; font-family: 'DM Sans', sans-serif; letter-spacing: .5px;">
-        <i class="fas fa-file-pdf me-2"></i> Save / Print PDF
+<div class="no-print">
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-file-pdf me-2"></i>Save / Print PDF
     </button>
 </div>
 
