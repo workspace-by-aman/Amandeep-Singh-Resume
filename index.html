@@ -3,534 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amandeep Singh - Software Engineer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="Amandeep Singh - Software Engineer resume">
+    <title>Amandeep Singh | Software Engineer</title>
 
     <style>
         :root {
-            --ink: #121826;
-            --ink-soft: #3f4758;
-            --ink-muted: #768092;
-            --accent: #1f5fbf;
-            --accent-2: #b8c2d2;
-            --accent-soft: #edf4ff;
-            --panel: #17345f;
-            --panel-soft: #244a7f;
-            --panel-line: rgba(255, 255, 255, .12);
+            --ink: #18222d;
+            --muted: #536273;
+            --accent: #0d6070;
+            --accent-dark: #12334a;
+            --accent-pale: #eaf4f5;
+            --line: #c7d2d8;
             --paper: #ffffff;
-            --line: #d9e1ec;
-            --chip: #f5f8fc;
         }
 
         * { box-sizing: border-box; }
 
-        p,
-        li,
-        span,
-        a,
-        strong,
-        h1,
-        h2 {
-            overflow-wrap: anywhere;
-        }
-
-        html {
-            background: #d8dee8;
-        }
+        html { background: #dce5e8; }
 
         body {
-            min-height: 100vh;
             margin: 0;
-            padding: 18px;
-            font-family: "DM Sans", Arial, sans-serif;
+            padding: 24px;
             color: var(--ink);
             background:
-                linear-gradient(135deg, rgba(31,95,191,.16), transparent 34%),
-                linear-gradient(315deg, rgba(184,194,210,.28), transparent 38%),
-                #dce2ec;
+                radial-gradient(circle at 8% 8%, rgba(13, 96, 112, .12), transparent 25%),
+                #dce5e8;
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.45;
         }
 
         .resume-wrapper {
             width: 210mm;
+            max-width: 100%;
             min-height: 297mm;
             margin: 0 auto;
-            overflow: hidden;
-            display: grid;
-            grid-template-rows: auto 1fr;
+            padding: 18mm 19mm;
             background: var(--paper);
-            box-shadow: 0 24px 70px rgba(18, 24, 38, .24);
+            border-top: 8px solid var(--accent-dark);
+            box-shadow: 0 18px 48px rgba(18, 51, 74, .18);
         }
 
         .resume-header {
-            position: relative;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 18px;
-            align-items: center;
-            padding: 24px 30px 22px;
+            margin: -10mm -11mm 20px;
+            padding: 13mm 11mm 11mm;
+            text-align: left;
             color: #fff;
-            background: linear-gradient(135deg, #17345f 0%, #244f8c 52%, #102747 100%);
-            border-bottom: 4px solid var(--accent);
-            overflow: hidden;
-        }
-
-        .resume-header::after {
-            content: "";
-            position: absolute;
-            right: 18px;
-            top: 18px;
-            width: 122px;
-            height: 122px;
-            border-radius: 50%;
-            border: 18px solid rgba(184,194,210,.18);
-        }
-
-        .avatar-ring {
-            position: relative;
-            z-index: 1;
-            width: 78px;
-            height: 78px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            color: #fff;
-            font-family: "DM Serif Display", Georgia, serif;
-            font-size: 30px;
-            background: linear-gradient(135deg, #1f5fbf, #8ea4c6);
-            border: 3px solid rgba(255,255,255,.24);
-            box-shadow: 0 0 0 7px rgba(184,194,210,.2);
-        }
-
-        .header-text {
-            position: relative;
-            z-index: 1;
-            min-width: 0;
-        }
-
-        .eyebrow {
-            margin: 0 0 4px;
-            color: var(--accent-2);
-            font-size: 9.5px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            background: linear-gradient(118deg, var(--accent-dark), #1b5269);
+            border-bottom: 4px solid #7ec4c3;
+            box-shadow: inset 0 -28px 0 rgba(0, 0, 0, .07);
         }
 
         .name {
             margin: 0;
-            font-family: "DM Serif Display", Georgia, serif;
-            font-size: 36px;
-            font-weight: 400;
-            line-height: 1.02;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28pt;
+            font-weight: 700;
+            letter-spacing: .2px;
+            line-height: 1.05;
         }
 
         .headline {
-            margin: 7px 0 0;
-            max-width: 610px;
-            color: rgba(255,255,255,.78);
-            font-size: 11.4px;
-            line-height: 1.48;
+            margin: 6px 0 9px;
+            color: #b9e0df;
+            font-size: 12pt;
+            letter-spacing: 1.8px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .header-focus {
+            max-width: 680px;
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: 10.5pt;
+            line-height: 1.4;
         }
 
         .contact-bar {
             display: flex;
             flex-wrap: wrap;
-            gap: 7px 14px;
-            margin-top: 12px;
+            justify-content: flex-start;
+            gap: 0 14px;
+            font-size: 10pt;
         }
 
         .contact-bar a,
         .contact-bar span {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: rgba(255,255,255,.8);
-            font-size: 9.4px;
-            line-height: 1.25;
+            color: #f4fbfb;
             text-decoration: none;
-            max-width: 100%;
         }
 
-        .contact-bar i {
-            color: var(--accent-2);
-            font-size: 10px;
+        .contact-bar span:not(:last-child)::after,
+        .contact-bar a:not(:last-child)::after {
+            content: " |";
+            color: #9bc8ca;
         }
 
-        .resume-body {
-            display: grid;
-            grid-template-columns: 228px 1fr;
-            min-height: 0;
-        }
-
-        .resume-sidebar {
-            padding: 22px 18px;
-            color: rgba(255,255,255,.78);
-            background: var(--panel);
-            border-right: 1px solid rgba(0,0,0,.12);
-            min-width: 0;
-        }
-
+        .resume-body,
         .resume-main {
-            padding: 22px 26px 20px;
-            min-width: 0;
+            display: block;
         }
+
+        .resume-main { padding: 0; }
 
         .sidebar-section,
-        .section-block {
-            margin-bottom: 18px;
+        .section-block,
+        .summary-card {
+            margin: 0 0 21px;
         }
 
         .sidebar-label,
         .section-title {
-            display: flex;
-            align-items: center;
-            gap: 9px;
+            display: block;
             margin: 0 0 10px;
-            font-size: 9.7px;
-            font-weight: 800;
-            letter-spacing: 1.7px;
+            padding: 7px 10px 6px;
+            color: var(--accent-dark);
+            background: linear-gradient(90deg, var(--accent-pale), transparent 72%);
+            border-left: 4px solid var(--accent);
+            border-bottom: 1px solid var(--line);
+            font-size: 11pt;
+            font-weight: 700;
+            letter-spacing: 1.4px;
             text-transform: uppercase;
         }
 
-        .sidebar-label {
-            color: var(--accent-2);
-            padding-bottom: 7px;
-            border-bottom: 1px solid var(--panel-line);
-        }
-
-        .section-title {
-            color: var(--ink);
-        }
-
-        .section-title::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: var(--line);
-        }
-
-        .section-num {
-            color: var(--accent);
-            font-size: 9px;
-        }
+        .section-num,
+        .comp-grid,
+        .metric-grid { display: none; }
 
         .summary-card {
-            padding: 12px 14px;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #f3f7ff, #ffffff);
-            border: 1px solid #d5e2f2;
-            border-left: 4px solid var(--accent);
+            padding: 14px 16px;
+            border: 1px solid #d3e2e4;
+            border-left: 5px solid var(--accent);
+            background: #f5faf9;
         }
 
         .summary-card p {
             margin: 0;
-            color: var(--ink-soft);
-            font-size: 10.9px;
-            line-height: 1.48;
+            color: var(--ink);
+            font-size: 10.5pt;
+            line-height: 1.52;
         }
 
-        .metric-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-top: 10px;
+        .impact-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px 22px;
+            margin-top: 13px;
+            padding-top: 10px;
+            color: var(--accent-dark);
+            border-top: 1px solid #cfe0e0;
+            font-size: 9.5pt;
+            font-weight: 700;
         }
 
-        .metric {
-            padding: 7px 7px;
-            background: #fff;
-            border: 1px solid #d9e3f0;
-        }
+        .impact-strip span { white-space: nowrap; }
 
-        .metric strong {
-            display: block;
+        .impact-strip strong {
+            margin-right: 3px;
             color: var(--accent);
-            font-size: 14px;
-            line-height: 1;
+            font-size: 12pt;
         }
 
-        .metric span {
-            display: block;
-            margin-top: 3px;
-            color: var(--ink-muted);
-            font-size: 8.2px;
-            line-height: 1.25;
-        }
+        .sidebar-section p { margin: 0 0 7px; }
 
         .skill-group-title {
-            margin: 10px 0 5px;
-            color: rgba(255,255,255,.45);
-            font-size: 8.6px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            display: inline;
+            margin: 0;
+            color: var(--accent-dark);
+            font-weight: 700;
         }
+
+        .skill-group-title::after { content: ": "; }
 
         .skill-chip {
-            display: inline-block;
-            margin: 0 4px 5px 0;
-            padding: 3px 6px;
-            color: rgba(255,255,255,.82);
-            background: rgba(255,255,255,.07);
-            border: 1px solid rgba(255,255,255,.12);
-            border-radius: 4px;
-            font-size: 9.3px;
-            line-height: 1.22;
-            max-width: 100%;
-        }
-
-        .skill-chip.featured {
-            color: #ffffff;
-            background: rgba(31,95,191,.32);
-            border-color: rgba(184,194,210,.48);
-        }
-
-        .side-line {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            margin-bottom: 7px;
-            font-size: 9.5px;
-            line-height: 1.3;
-        }
-
-        .side-line strong {
-            color: rgba(255,255,255,.92);
-            font-weight: 700;
-        }
-
-        .side-line span {
-            color: rgba(255,255,255,.48);
-            text-align: right;
-        }
-
-        .edu-degree {
-            margin: 0;
-            color: rgba(255,255,255,.92);
-            font-size: 10.5px;
-            font-weight: 800;
-            line-height: 1.35;
-        }
-
-        .edu-college {
-            margin: 3px 0 6px;
-            color: rgba(255,255,255,.52);
-            font-size: 9.5px;
-            line-height: 1.35;
-        }
-
-        .edu-year {
-            display: inline-block;
-            padding: 3px 7px;
-            color: #ffffff;
-            background: rgba(31,95,191,.24);
-            border-radius: 4px;
-            font-size: 8.6px;
-            font-weight: 700;
-        }
-
-        .quick-list {
+            display: inline;
             margin: 0;
             padding: 0;
-            list-style: none;
+            color: var(--ink);
+            background: transparent;
+            border: 0;
+            font-size: 10.5pt;
         }
 
-        .quick-list li {
-            position: relative;
-            margin-bottom: 7px;
-            padding-left: 14px;
-            color: rgba(255,255,255,.72);
-            font-size: 9.5px;
-            line-height: 1.33;
+        .skill-chip:not(:last-of-type)::after { content: ", "; }
+
+        .quick-list,
+        .job-bullets,
+        .project-bullets {
+            margin: 0;
+            padding-left: 20px;
         }
 
-        .quick-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent-2);
+        .quick-list li,
+        .job-bullets li,
+        .project-bullets li {
+            margin-bottom: 4px;
+            color: var(--ink);
+            font-size: 10.5pt;
         }
 
-        .timeline-item {
-            position: relative;
-            padding-left: 18px;
-            margin-bottom: 14px;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 0 4px rgba(31,95,191,.16);
-        }
-
-        .timeline-item::after {
-            content: "";
-            position: absolute;
-            left: 4px;
-            top: 19px;
-            bottom: -11px;
-            width: 1px;
-            background: var(--line);
-        }
-
-        .timeline-item:last-child::after { display: none; }
+        .timeline-item { margin-bottom: 13px; }
 
         .role-row {
             display: flex;
             justify-content: space-between;
             gap: 16px;
-            align-items: flex-start;
-            margin-bottom: 7px;
-            min-width: 0;
+            align-items: baseline;
+            margin-bottom: 5px;
+            padding: 0 0 8px 12px;
+            border-left: 3px solid var(--accent);
+            border-bottom: 1px solid #dfe6e8;
         }
 
-        .role-row > div {
-            min-width: 0;
-        }
+        .job-title,
+        .job-company,
+        .job-badge,
+        .project-name,
+        .project-stack,
+        .project-desc,
+        .edu-degree,
+        .edu-college,
+        .edu-year,
+        .side-line { margin: 0; }
 
-        .job-title {
-            margin: 0;
-            font-size: 13.4px;
-            font-weight: 800;
-        }
+        .job-title,
+        .project-name,
+        .edu-degree { font-size: 11.5pt; font-weight: 700; }
 
-        .job-company {
-            margin: 2px 0 0;
-            color: var(--ink-muted);
-            font-size: 10px;
-        }
+        .job-company,
+        .job-badge,
+        .project-stack,
+        .project-desc,
+        .edu-college,
+        .edu-year,
+        .side-line { font-size: 10.5pt; }
+
+        .job-company,
+        .job-badge,
+        .project-stack,
+        .edu-college,
+        .side-line span { color: var(--muted); }
 
         .job-badge {
-            flex: 0 0 auto;
-            padding: 4px 9px;
-            color: var(--accent);
-            background: var(--accent-soft);
-            border: 1px solid #cfdcf0;
-            border-radius: 999px;
-            font-size: 8.6px;
-            font-weight: 800;
+            color: var(--accent) !important;
+            font-size: 9.5pt;
+            font-weight: 700;
             white-space: nowrap;
         }
 
-        .job-bullets {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .job-bullets li {
-            position: relative;
-            margin-bottom: 5px;
-            padding-left: 16px;
-            color: var(--ink-soft);
-            font-size: 10.1px;
-            line-height: 1.38;
-        }
-
-        .job-bullets li::before {
-            content: "\f00c";
-            position: absolute;
-            left: 0;
-            top: 1px;
-            color: var(--accent);
-            font-family: "Font Awesome 6 Free";
-            font-size: 8px;
-            font-weight: 900;
-        }
-
-        .comp-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 7px;
-        }
-
-        .comp-chip {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            min-height: 31px;
-            padding: 7px 9px;
-            color: var(--ink-soft);
-            background: var(--chip);
-            border: 1px solid #dbe5f1;
-            border-radius: 5px;
-            font-size: 9.5px;
-            font-weight: 700;
-            line-height: 1.25;
-            min-width: 0;
-        }
-
-        .comp-chip i {
-            width: 13px;
-            color: var(--accent);
-            text-align: center;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 9px;
-        }
+        .projects-grid { display: block; }
 
         .project-card {
-            min-height: 100px;
-            padding: 10px 11px;
-            background: #fff;
-            border: 1px solid #dbe4ef;
-            border-left: 4px solid var(--accent);
-            overflow: hidden;
+            margin-bottom: 11px;
+            padding: 10px 13px;
+            border: 1px solid #d8e2e4;
+            border-left: 4px solid #73b5b5;
+            background: #fbfdfd;
+            box-shadow: 0 3px 10px rgba(18, 51, 74, .05);
         }
 
-        .project-name {
-            margin: 0 0 3px;
-            font-size: 10.8px;
-            font-weight: 800;
-            line-height: 1.22;
-        }
+        .project-name { color: var(--accent-dark); }
 
         .project-stack {
-            margin: 0 0 5px;
-            color: var(--accent);
-            font-size: 8.2px;
-            font-weight: 800;
-            letter-spacing: .2px;
-            line-height: 1.25;
-            text-transform: uppercase;
+            margin-top: 2px;
+            color: var(--accent) !important;
+            font-size: 9.5pt;
+            font-weight: 700;
         }
 
-        .project-desc {
-            margin: 0;
-            color: var(--ink-soft);
-            font-size: 9.3px;
-            line-height: 1.34;
+        .project-desc { margin-top: 2px; }
+
+        .side-line { display: inline; margin-right: 14px; }
+
+        .side-line strong { font-weight: 700; }
+
+        .side-line strong::after { content: ": "; }
+
+        .edu-year { display: block; }
+
+        .section-block:last-child {
+            margin-bottom: 0;
+            padding-top: 1px;
         }
 
         .no-print {
+            width: 210mm;
+            max-width: 100%;
+            margin: 16px auto 0;
             text-align: center;
-            margin: 18px 0 0;
         }
 
         .print-btn {
-            border: 0;
-            border-radius: 999px;
-            padding: 10px 20px;
+            padding: 8px 16px;
             color: #fff;
-            background: linear-gradient(135deg, var(--accent), #17345f);
-            box-shadow: 0 8px 24px rgba(31,95,191,.24);
-            font-weight: 800;
-            letter-spacing: .2px;
+            background: var(--accent-dark);
+            border: 0;
+            font-weight: 700;
+            cursor: pointer;
         }
 
         @page {
@@ -552,15 +323,14 @@
                 width: 210mm;
                 height: 297mm;
                 min-height: 297mm;
+                max-width: none;
+                padding: 16mm 18mm;
                 margin: 0;
                 box-shadow: none;
             }
 
             .resume-header,
-            .resume-sidebar,
             .summary-card,
-            .metric,
-            .comp-chip,
             .project-card {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
@@ -586,223 +356,109 @@
                 min-height: auto;
             }
 
-            .resume-body {
-                grid-template-columns: 1fr;
-            }
-
-            .resume-sidebar {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0 18px;
-            }
         }
 
         @media screen and (max-width: 560px) {
-            .resume-header {
-                grid-template-columns: 1fr;
-                padding: 22px;
-            }
-
-            .resume-sidebar,
-            .projects-grid,
-            .comp-grid,
-            .metric-grid {
-                grid-template-columns: 1fr;
-            }
+            .resume-header { padding: 22px; }
 
             .resume-main {
-                padding: 20px;
+                padding: 0;
             }
 
             .role-row {
                 display: block;
             }
 
-            .job-badge {
-                display: inline-block;
-                margin-top: 6px;
-            }
+            .job-badge { display: block; margin-top: 3px; }
         }
     </style>
 </head>
 <body>
 <article class="resume-wrapper">
     <header class="resume-header">
-        <div class="avatar-ring">AS</div>
-        <div class="header-text">
-            <p class="eyebrow">Full-Stack Software Engineer</p>
-            <h1 class="name">Amandeep Singh</h1>
-            <p class="headline">
-                4.5+ years building fast, secure, production-ready web products across Laravel,
-                Next.js, PHP, JavaScript, and SQL. Strong in API development, admin dashboards,
-                performance optimization, and turning business requirements into reliable user experiences.
-            </p>
-            <div class="contact-bar">
-                <a href="mailto:iamamandeepsingh2000@gmail.com"><i class="fas fa-envelope"></i>iamamandeepsingh2000@gmail.com</a>
-                <a href="tel:+919465723067"><i class="fas fa-phone"></i>+91 94657 23067</a>
-                <span><i class="fas fa-location-dot"></i>Ludhiana, Punjab, India</span>
-            </div>
+        <h1 class="name">Amandeep Singh</h1>
+        <p class="headline">Software Engineer</p>
+            <p class="header-focus">Full-Stack Development | Laravel | Next.js | RESTful APIs | Performance Optimization</p>
+        <div class="contact-bar">
+            <span>Ludhiana, Punjab, India</span>
+            <a href="mailto:iamamandeepsingh2000@gmail.com">iamamandeepsingh2000@gmail.com</a>
+            <a href="tel:+919465723067">+91 94657 23067</a>
         </div>
     </header>
 
-    <div class="resume-body">
-        <aside class="resume-sidebar">
-            <section class="sidebar-section">
-                <h2 class="sidebar-label">Technical Skills</h2>
+    <main class="resume-main">
+        <section class="summary-card">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>Software Engineer with 4.5+ years of experience building production-ready web applications using Laravel, Next.js, PHP, JavaScript, TypeScript, and SQL. Skilled in full-stack development, RESTful API development, admin dashboards, authentication, performance optimization, and responsive user interfaces. Foundational knowledge of Python, data analysis, and machine learning workflows using pandas, scikit-learn, and Matplotlib</p>
+            <div class="impact-strip" aria-label="Selected career impact">
+                <span><strong>4.5+</strong> years experience</span>
+                <span><strong>40%</strong> Core Web Vitals improvement</span>
+                <span><strong>96+</strong> Lighthouse score</span>
+            </div>
+        </section>
 
-                <div class="skill-group-title">Core Stack</div>
-                <span class="skill-chip featured">Laravel</span>
-                <span class="skill-chip featured">Next.js</span>
-                <span class="skill-chip">PHP</span>
-                <span class="skill-chip">JavaScript</span>
-                <span class="skill-chip">TypeScript</span>
+        <section class="sidebar-section">
+            <h2 class="sidebar-label">Technical Skills</h2>
+            <p><span class="skill-group-title">Languages &amp; Frameworks</span> PHP, Laravel, JavaScript, TypeScript, Next.js, Python, HTML5, CSS3, Tailwind CSS, Bootstrap</p>
+            <p><span class="skill-group-title">Databases &amp; APIs</span> MySQL, PostgreSQL, RESTful APIs, Webhooks, JWT Authentication</p>
+            <p><span class="skill-group-title">Tools &amp; Platforms</span> GitHub, Cursor, Lovable, Agile/Scrum</p>
+            <p><span class="skill-group-title">Data Science / ML Foundations</span> Python, pandas, scikit-learn, Matplotlib (Basic Understanding)</p>
+        </section>
 
-                <div class="skill-group-title">Data & APIs</div>
-                <span class="skill-chip">MySQL</span>
-                <span class="skill-chip">PostgreSQL</span>
-                <span class="skill-chip">REST APIs</span>
-                <span class="skill-chip">Webhooks</span>
-                <span class="skill-chip">JWT Auth</span>
-
-                <div class="skill-group-title">Frontend & UI</div>
-                <span class="skill-chip">HTML5</span>
-                <span class="skill-chip">CSS3</span>
-                <span class="skill-chip">Responsive UI</span>
-                <span class="skill-chip">SSR</span>
-
-                <div class="skill-group-title">Tools</div>
-                <span class="skill-chip">GitHub</span>
-                <span class="skill-chip">Bootstrap</span>
-                <span class="skill-chip">Tailwind CSS</span>
-                <span class="skill-chip">Cursor</span>
-                <span class="skill-chip">Lovable</span>
-            </section>
-
-            <section class="sidebar-section">
-                <h2 class="sidebar-label">Hiring Highlights</h2>
-                <ul class="quick-list">
-                    <li>Ready for full-stack, Laravel, Next.js, PHP, and JavaScript roles.</li>
-                    <li>Comfortable owning features from requirement discussion to launch.</li>
-                    <li>Focused on clean code, readable architecture, and practical delivery.</li>
-                    <li>Experienced with performance tuning, debugging, and responsive UI.</li>
-                </ul>
-            </section>
-
-            <section class="sidebar-section">
-                <h2 class="sidebar-label">Languages</h2>
-                <div class="side-line"><strong>English</strong><span>Conversational</span></div>
-                <div class="side-line"><strong>Hindi</strong><span>Fluent</span></div>
-                <div class="side-line"><strong>Punjabi</strong><span>Fluent</span></div>
-            </section>
-
-            <section class="sidebar-section">
-                <h2 class="sidebar-label">Education</h2>
-                <p class="edu-degree">Bachelor of Computer Applications</p>
-                <p class="edu-college">GGN Khalsa College, Ludhiana</p>
-                <span class="edu-year">Graduated Apr 2022</span>
-            </section>
-        </aside>
-
-        <main class="resume-main">
-            <section class="summary-card">
-                <p>
-                    Impact-focused developer trusted to build custom dashboards, business web apps,
-                    integrations, and API-backed applications. Known for practical problem
-                    solving, fast learning, collaboration with designers and stakeholders, and delivering
-                    polished products that are easy to maintain.
-                </p>
-                <div class="metric-grid">
-                    <div class="metric"><strong>4.5+</strong><span>years professional experience</span></div>
-                    <div class="metric"><strong>40%</strong><span>Core Web Vitals improvement</span></div>
-                    <div class="metric"><strong>35%</strong><span>page-load reduction on dashboard</span></div>
-                </div>
-            </section>
-
-            <section class="section-block">
-                <h2 class="section-title"><span class="section-num">01</span> Work Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="role-row">
-                            <div>
-                                <p class="job-title">Software Engineer</p>
-                                <p class="job-company"><i class="fas fa-building me-1"></i>Logical Solutions, Ludhiana, Punjab</p>
-                            </div>
-                            <span class="job-badge">Jun 2021 - Nov 2025</span>
-                        </div>
-                        <ul class="job-bullets">
-                            <li>Delivered scalable production web applications for clients across business operations, dashboards, workflow automation, and content-driven platforms.</li>
-                            <li>Built Next.js interfaces with server-side rendering, reusable components, optimized routing, and responsive UI for smooth user experiences.</li>
-                            <li>Developed Laravel-based modules for admin panels, reporting flows, file handling, notifications, and secure business logic.</li>
-                            <li>Created server-rendered and static applications in Next.js, improving Core Web Vitals by up to 40% through optimized rendering and assets.</li>
-                            <li>Implemented secure Laravel APIs, authentication, role-based access, reporting dashboards, and optimized database queries.</li>
-                            <li>Mentored junior developers, reviewed code, supported Agile sprint planning, and translated stakeholder needs into clear technical tasks.</li>
-                        </ul>
+        <section class="section-block">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline-item">
+                <div class="role-row">
+                    <div>
+                        <p class="job-title">Software Engineer</p>
+                        <p class="job-company">Logical Solutions, Ludhiana, Punjab</p>
                     </div>
+                    <span class="job-badge">Jun 2021 - Nov 2025</span>
                 </div>
-            </section>
+                <ul class="job-bullets">
+                    <li>Improved Core Web Vitals by up to 40% by optimizing Next.js server-side rendering, static generation, routing, and frontend assets across production web applications.</li>
+                    <li>Reduced dashboard page-load speeds by 35% by optimizing Laravel and MySQL queries, backend data flows, and reusable Next.js components.</li>
+                    <li>Built and shipped Laravel modules and RESTful APIs for admin panels, reporting, authentication, role-based access, file handling, notifications, and workflow automation.</li>
+                    <li>Developed responsive Next.js interfaces and analytics dashboards that achieved a 96+ Lighthouse performance score through efficient rendering and frontend optimization.</li>
+                    <li>Supported Agile/Scrum delivery by mentoring junior developers, reviewing code, planning sprint tasks, and translating stakeholder requirements into maintainable features.</li>
+                </ul>
+            </div>
+        </section>
 
-            <section class="section-block">
-                <h2 class="section-title"><span class="section-num">02</span> Core Strengths</h2>
-                <div class="comp-grid">
-                    <span class="comp-chip"><i class="fas fa-laptop-code"></i>Full-Stack Development</span>
-                    <span class="comp-chip"><i class="fas fa-gauge-high"></i>Performance Optimization</span>
-                    <span class="comp-chip"><i class="fas fa-code-branch"></i>Version Control & Reviews</span>
-                    <span class="comp-chip"><i class="fas fa-shield-halved"></i>Secure API Development</span>
-                    <span class="comp-chip"><i class="fas fa-mobile-screen"></i>Responsive Web Design</span>
-                    <span class="comp-chip"><i class="fas fa-people-group"></i>Team Collaboration</span>
-                </div>
-            </section>
+        <section class="section-block">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <p class="project-name">Enterprise Management System</p>
+                    <p class="project-stack">Technologies: Laravel, MySQL, Bootstrap, Next.js</p>
+                    <ul class="project-bullets"><li>Led backend development for a multi-module business system with role-based access and reporting dashboards; optimized queries to reduce average page-load time by 35%.</li></ul>
+                </article>
+                <article class="project-card">
+                    <p class="project-name">Workflow Automation Platform</p>
+                    <p class="project-stack">Technologies: Laravel, Next.js, RESTful APIs, Webhooks</p>
+                    <ul class="project-bullets"><li>Built role-based workflow screens, automated status updates, webhook integrations, and maintainable API contracts to reduce manual follow-up across internal teams.</li></ul>
+                </article>
+                <article class="project-card">
+                    <p class="project-name">Custom Admin and Reporting Portal</p>
+                    <p class="project-stack">Technologies: PHP, Laravel, MySQL, JavaScript</p>
+                    <ul class="project-bullets"><li>Developed reusable admin modules, advanced filters, export-ready reports, validation flows, and optimized database queries for faster daily operations.</li></ul>
+                </article>
+            </div>
+        </section>
 
-            <section class="section-block">
-                <h2 class="section-title"><span class="section-num">03</span> Selected Projects</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <p class="project-name">Enterprise Management System</p>
-                        <p class="project-stack">Laravel - MySQL - Bootstrap - Next.js</p>
-                        <p class="project-desc">
-                            Led backend development for a multi-module business system with role-based access,
-                            reporting dashboards, and optimized queries that reduced average page load by 35%.
-                        </p>
-                    </article>
-
-                    <article class="project-card">
-                        <p class="project-name">Workflow Automation Platform</p>
-                        <p class="project-stack">Laravel - Next.js - REST API - Webhooks</p>
-                        <p class="project-desc">
-                            Built role-based workflow screens, automated status updates, webhook integrations,
-                            and clean API contracts to reduce manual follow-up across internal teams.
-                        </p>
-                    </article>
-
-                    <article class="project-card">
-                        <p class="project-name">Custom Admin & Reporting Portal</p>
-                        <p class="project-stack">PHP - Laravel - MySQL - JavaScript</p>
-                        <p class="project-desc">
-                            Developed reusable admin modules, advanced filters, export-ready reports,
-                            validation flows, and optimized database queries for faster daily operations.
-                        </p>
-                    </article>
-
-                    <article class="project-card">
-                        <p class="project-name">Next.js SaaS Dashboard</p>
-                        <p class="project-stack">Next.js - TypeScript - REST API - JWT Auth</p>
-                        <p class="project-desc">
-                            Created an analytics dashboard with SSR, dynamic routing, JWT authentication,
-                            real-time visualizations, and a 96+ Lighthouse performance score.
-                        </p>
-                    </article>
-                </div>
-            </section>
-        </main>
-    </div>
+        <section class="section-block">
+            <h2 class="section-title">Education and Languages</h2>
+            <p class="edu-degree">Bachelor of Computer Applications</p>
+            <p class="edu-college">GGN Khalsa College, Ludhiana | Graduated April 2022</p>
+            <p class="side-line"><strong>English</strong><span>Conversational</span></p>
+            <p class="side-line"><strong>Hindi</strong><span>Fluent</span></p>
+            <p class="side-line"><strong>Punjabi</strong><span>Fluent</span></p>
+        </section>
+    </main>
 </article>
 
 <div class="no-print">
-    <button class="print-btn" onclick="window.print()">
-        <i class="fas fa-file-pdf me-2"></i>Save / Print PDF
-    </button>
+    <button class="print-btn" onclick="window.print()">Save / Print PDF</button>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
